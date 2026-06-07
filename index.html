@@ -1,349 +1,303 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Listening Exercise - Finding the Library</title>
-
 <style>
-
 body{
     font-family: Arial, sans-serif;
-    max-width:1000px;
-    margin:auto;
-    padding:20px;
-    background:#f5f7fb;
+    background:#f5f7fa;
+    margin:0;
+    padding:0;
 }
 
-h1{
-    text-align:center;
-    color:#2c3e50;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    margin-top:20px;
-    box-shadow:0 3px 10px rgba(0,0,0,.1);
-}
-
-.word-bank{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:25px;
-}
-
-.word{
-    background:#4361ee;
+header{
+    background:#1e40af;
     color:white;
-    padding:10px 15px;
-    border-radius:8px;
-    cursor:grab;
-    font-weight:bold;
+    text-align:center;
+    padding:25px;
+}
+
+.container{
+    max-width:1000px;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+audio{
+    width:100%;
+    margin:20px 0;
 }
 
 .question{
-    margin:20px 0;
-    font-size:18px;
-    line-height:1.8;
-}
-
-.dropzone{
-    display:inline-block;
-    min-width:120px;
-    min-height:35px;
-    border:2px dashed #4361ee;
+    border:1px solid #ddd;
     border-radius:8px;
-    text-align:center;
-    background:white;
-    vertical-align:middle;
+    padding:15px;
+    margin-bottom:20px;
 }
 
-.correct{
-    background:#06d6a0 !important;
-    color:white;
-    border-color:#06d6a0 !important;
-}
-
-.wrong{
-    background:#ef233c !important;
-    color:white;
-    border-color:#ef233c !important;
-}
-
-.feedback{
-    color:#ef233c;
-    font-size:14px;
-    margin-top:5px;
+select{
+    padding:8px;
 }
 
 button{
-    background:#4361ee;
+    background:#2563eb;
     color:white;
     border:none;
     padding:12px 25px;
+    font-size:16px;
     border-radius:8px;
-    font-size:18px;
     cursor:pointer;
 }
 
 button:hover{
-    opacity:.9;
+    background:#1d4ed8;
 }
 
 #result{
-    margin-top:25px;
-    font-size:24px;
-    font-weight:bold;
+    margin-top:20px;
+    padding:20px;
     text-align:center;
-}
-
-.tf-feedback{
-    margin-left:10px;
+    font-size:22px;
     font-weight:bold;
+    border-radius:10px;
 }
 
+.pass{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.fail{
+    background:#fee2e2;
+    color:#991b1b;
+}
 </style>
 </head>
 <body>
 
-<h1>🎧 Finding the Library</h1>
+<p><strong>Instructions:</strong> Listen to the audio and complete all activities.</p>
 
-<audio controls style="width:100%;">
-<source src="0L4-finding-the-library.mp3" type="audio/mpeg">
+<audio controls>
+    <source src="B1_celebrations.mp3" type="audio/mpeg">
 </audio>
 
-<div class="card">
+<h2>Part A: Match the Speakers</h2>
 
-<h2>Part 1: Drag the Words</h2>
-
-<div class="word-bank">
-
-<div class="word" draggable="true" id="library">library</div>
-<div class="word" draggable="true" id="bridge">bridge</div>
-<div class="word" draggable="true" id="supermarket">supermarket</div>
-<div class="word" draggable="true" id="right">right</div>
-<div class="word" draggable="true" id="park">park</div>
-<div class="word" draggable="true" id="red">red</div>
-
+<div class="question">
+1. A birthday surprise party
+<select id="q1">
+<option value="">Choose</option>
+<option value="A">Speaker A</option>
+<option value="B">Speaker B</option>
+<option value="C">Speaker C</option>
+<option value="D">Speaker D</option>
+<option value="E">Speaker E</option>
+</select>
 </div>
 
 <div class="question">
-1. John is looking for the
-<span class="dropzone" data-answer="library"></span>
+2. A school leaving party
+<select id="q2">
+<option value="">Choose</option>
+<option value="A">Speaker A</option>
+<option value="B">Speaker B</option>
+<option value="C">Speaker C</option>
+<option value="D">Speaker D</option>
+<option value="E">Speaker E</option>
+</select>
 </div>
 
 <div class="question">
-2. John needs to cross the river on a
-<span class="dropzone" data-answer="bridge"></span>
+3. A royal celebration
+<select id="q3">
+<option value="">Choose</option>
+<option value="A">Speaker A</option>
+<option value="B">Speaker B</option>
+<option value="C">Speaker C</option>
+<option value="D">Speaker D</option>
+<option value="E">Speaker E</option>
+</select>
 </div>
 
 <div class="question">
-3. John will see a big
-<span class="dropzone" data-answer="supermarket"></span>
-on his left.
+4. A family anniversary
+<select id="q4">
+<option value="">Choose</option>
+<option value="A">Speaker A</option>
+<option value="B">Speaker B</option>
+<option value="C">Speaker C</option>
+<option value="D">Speaker D</option>
+<option value="E">Speaker E</option>
+</select>
 </div>
 
 <div class="question">
-4. He should turn
-<span class="dropzone" data-answer="right"></span>
-after the supermarket.
+5. A street party
+<select id="q5">
+<option value="">Choose</option>
+<option value="A">Speaker A</option>
+<option value="B">Speaker B</option>
+<option value="C">Speaker C</option>
+<option value="D">Speaker D</option>
+<option value="E">Speaker E</option>
+</select>
+</div>
+
+<h2>Part B: Multiple Choice</h2>
+
+<div class="question">
+6. What will decorate the hall?
+<br>
+<label><input type="radio" name="q6" value="a"> Flowers and balloons</label><br>
+<label><input type="radio" name="q6" value="b"> Paper streamers and Chinese lanterns</label><br>
+<label><input type="radio" name="q6" value="c"> Flags and posters</label>
 </div>
 
 <div class="question">
-5. The library is across from the
-<span class="dropzone" data-answer="park"></span>
+7. Why is Speaker A's band special?
+<br>
+<label><input type="radio" name="q7" value="a"> Newest band</label><br>
+<label><input type="radio" name="q7" value="b"> Famous singer</label><br>
+<label><input type="radio" name="q7" value="c"> Together the longest</label>
 </div>
 
 <div class="question">
-6. The library is a big building with a
-<span class="dropzone" data-answer="red"></span>
-roof.
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>Part 2: True or False</h2>
-
-<div class="question">
-1. John knows the town very well.
-<label><input type="radio" name="tf1" value="True"> True</label>
-<label><input type="radio" name="tf1" value="False"> False</label>
-<span id="fb1" class="tf-feedback"></span>
+8. What should visitors watch out for?
+<br>
+<label><input type="radio" name="q8" value="a"> Rain</label><br>
+<label><input type="radio" name="q8" value="b"> Pick-pockets</label><br>
+<label><input type="radio" name="q8" value="c"> Traffic</label>
 </div>
 
 <div class="question">
-2. John is visiting the town for only one day.
-<label><input type="radio" name="tf2" value="True"> True</label>
-<label><input type="radio" name="tf2" value="False"> False</label>
-<span id="fb2" class="tf-feedback"></span>
+9. Why is the family meeting?
+<br>
+<label><input type="radio" name="q9" value="a"> Birthday</label><br>
+<label><input type="radio" name="q9" value="b"> Wedding</label><br>
+<label><input type="radio" name="q9" value="c"> Golden wedding anniversary</label>
 </div>
 
 <div class="question">
-3. The library is very far away.
-<label><input type="radio" name="tf3" value="True"> True</label>
-<label><input type="radio" name="tf3" value="False"> False</label>
-<span id="fb3" class="tf-feedback"></span>
+10. What decorations are planned?
+<br>
+<label><input type="radio" name="q10" value="a"> Christmas</label><br>
+<label><input type="radio" name="q10" value="b"> Halloween</label><br>
+<label><input type="radio" name="q10" value="c"> Wedding</label>
+</div>
+
+<h2>Part C: True or False</h2>
+
+<div class="question">
+11. Speaker B wears a costume every year.
+<br>
+<label><input type="radio" name="q11" value="true"> True</label>
+<label><input type="radio" name="q11" value="false"> False</label>
 </div>
 
 <div class="question">
-4. John must cross a river to get to the library.
-<label><input type="radio" name="tf4" value="True"> True</label>
-<label><input type="radio" name="tf4" value="False"> False</label>
-<span id="fb4" class="tf-feedback"></span>
+12. Speaker C has not seen the cousins for a long time.
+<br>
+<label><input type="radio" name="q12" value="true"> True</label>
+<label><input type="radio" name="q12" value="false"> False</label>
 </div>
 
 <div class="question">
-5. John should turn left after the supermarket.
-<label><input type="radio" name="tf5" value="True"> True</label>
-<label><input type="radio" name="tf5" value="False"> False</label>
-<span id="fb5" class="tf-feedback"></span>
+13. Speaker D wants the birthday girls to know about the party.
+<br>
+<label><input type="radio" name="q13" value="true"> True</label>
+<label><input type="radio" name="q13" value="false"> False</label>
 </div>
 
 <div class="question">
-6. The library is next to the park.
-<label><input type="radio" name="tf6" value="True"> True</label>
-<label><input type="radio" name="tf6" value="False"> False</label>
-<span id="fb6" class="tf-feedback"></span>
+14. The street party includes food from different countries.
+<br>
+<label><input type="radio" name="q14" value="true"> True</label>
+<label><input type="radio" name="q14" value="false"> False</label>
 </div>
 
 <div class="question">
-7. The library has a red roof.
-<label><input type="radio" name="tf7" value="True"> True</label>
-<label><input type="radio" name="tf7" value="False"> False</label>
-<span id="fb7" class="tf-feedback"></span>
+15. Speaker A's band performs first.
+<br>
+<label><input type="radio" name="q15" value="true"> True</label>
+<label><input type="radio" name="q15" value="false"> False</label>
 </div>
 
-</div>
-
-<div style="text-align:center;margin-top:20px;">
-<button onclick="checkAnswers()">Check Answers</button>
-<button onclick="location.reload()">Try Again</button>
-</div>
+<button onclick="checkAnswers()">Submit Answers</button>
 
 <div id="result"></div>
 
+</div>
+
 <script>
-
-const draggables=document.querySelectorAll('.word');
-const dropzones=document.querySelectorAll('.dropzone');
-
-draggables.forEach(item=>{
-
-item.addEventListener('dragstart',e=>{
-e.dataTransfer.setData('text',item.id);
-});
-
-});
-
-dropzones.forEach(zone=>{
-
-zone.addEventListener('dragover',e=>{
-e.preventDefault();
-});
-
-zone.addEventListener('drop',e=>{
-
-e.preventDefault();
-
-const id=e.dataTransfer.getData('text');
-
-zone.innerHTML=id;
-zone.dataset.user=id;
-
-});
-
-});
 
 function checkAnswers(){
 
-let score=0;
+let score = 0;
 
-// Fill blanks
-
-dropzones.forEach(zone=>{
-
-if(zone.dataset.user===zone.dataset.answer){
-
-zone.classList.add("correct");
-score++;
-
-}else{
-
-zone.classList.add("wrong");
-
-zone.innerHTML=
-(zone.dataset.user || "blank")
-+"<br><small>✓ "
-+zone.dataset.answer+
-"</small>";
-
-}
-
-});
-
-// True False
-
-const answers={
-tf1:"False",
-tf2:"True",
-tf3:"False",
-tf4:"True",
-tf5:"False",
-tf6:"False",
-tf7:"True"
+const matchingAnswers = {
+q1:"D",
+q2:"A",
+q3:"E",
+q4:"C",
+q5:"E"
 };
 
-for(let key in answers){
-
-const selected=document.querySelector(
-`input[name="${key}"]:checked`
-);
-
-const feedback=document.getElementById(
-"fb"+key.replace("tf","")
-);
-
-if(selected){
-
-if(selected.value===answers[key]){
-
-feedback.innerHTML="✓";
-feedback.style.color="green";
+for(let q in matchingAnswers){
+if(document.getElementById(q).value === matchingAnswers[q]){
 score++;
+}
+}
 
+const answers = {
+q6:"b",
+q7:"c",
+q8:"b",
+q9:"c",
+q10:"b",
+q11:"false",
+q12:"true",
+q13:"false",
+q14:"true",
+q15:"false"
+};
+
+for(let q in answers){
+let selected =
+document.querySelector(`input[name="${q}"]:checked`);
+
+if(selected && selected.value === answers[q]){
+score++;
+}
+}
+
+let percentage =
+Math.round((score/15)*100);
+
+let feedback = "";
+
+if(percentage >= 80){
+feedback = "Excellent!";
+}
+else if(percentage >= 60){
+feedback = "Good Job!";
+}
+else{
+feedback = "Keep Practising!";
+}
+
+const result =
+document.getElementById("result");
+
+result.innerHTML =
+`Score: ${score}/15 (${percentage}%)<br>${feedback}`;
+
+if(percentage >= 60){
+result.className = "pass";
 }else{
-
-feedback.innerHTML=
-"Correct: "+answers[key];
-feedback.style.color="red";
-
+result.className = "fail";
 }
-
-}else{
-
-feedback.innerHTML=
-"Correct: "+answers[key];
-feedback.style.color="red";
-
-}
-
-}
-
-let percent=Math.round((score/13)*100);
-
-document.getElementById("result").innerHTML=
-`
-Score: ${score}/13
-<br>
-Percentage: ${percent}%
-`;
-
 }
 
 </script>
